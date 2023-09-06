@@ -21,10 +21,18 @@ class SeriesController extends Controller
 
     public function index(Request $request)
     {
-        $series = Series::all();
+        $search = request()->input('search');
+
+            if ($search) {
+                $series = Series::where('nome', 'like', '%' . $search . '%')->get();
+            } else {
+                $series = Series::all();
+            }
+            //dd($search);
+
         $mensagemSucesso = session('mensagem.sucesso');
 
-        return view('series.index')->with('series', $series)
+        return view('series.index',['series' => $series, 'search' => $search])->with('series', $series)
             ->with('mensagemSucesso', $mensagemSucesso);
     }
 
