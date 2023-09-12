@@ -28,7 +28,6 @@ class SeriesController extends Controller
             } else {
                 $series = Series::all();
             }
-            //dd($search);
 
         $mensagemSucesso = session('mensagem.sucesso');
 
@@ -45,10 +44,10 @@ class SeriesController extends Controller
     {   
         //Este if verifica se existe uma imagem inserida no input, se o retorno for positivo ele cria a série com a capa selecionada
         //se for negativo ele utiliza o arquivo padrão "no_cover.gif" que fica armazenado na pasta storage/app/public/series_cover.
-        if($request->hasFile('cover')){
+        if ($request->hasFile('cover')) {
             $coverPath = $request->file('cover')->store('series_cover', 'public');
             $request->coverPath = $coverPath;
-        }else{
+        } else {
             $request->coverPath = 'series_cover/no_cover.gif';
         }
 
@@ -62,6 +61,7 @@ class SeriesController extends Controller
           $request->coverPath,
         );
 
+        //dd(request()->all());
         return to_route('series.index')
             ->with('mensagem.sucesso', "Série '{$serie->nome}' adicionada com sucesso");
     }
