@@ -85,8 +85,20 @@ body {
   background-color: #708090;
 }
 
+.search-form-container {
+  width: 400px; /* Ajuste a largura conforme necessário */
+}
+
 .series-name {
   color: #000; /* Preto */
+}
+
+.description-box {
+  margin-top: 20px; /* Espaçamento superior para separar da imagem */
+  padding: 10px; /* Espaçamento interno para dar destaque */
+  background-color: #f8f8f8; /* Cor de fundo da caixa de descrição */
+  border: 1px solid #ccc; /* Borda da caixa de descrição */
+  border-radius: 5px; /* Borda arredondada */
 }
 
 hr {

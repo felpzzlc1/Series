@@ -51,6 +51,11 @@ class SeriesController extends Controller
             $request->coverPath = 'series_cover/no_cover.gif';
         }
 
+        $request->validate([
+            // Outras regras de validação existentes
+            'descricao' => 'nullable|string', // Defina as regras apropriadas para a descrição
+        ]);
+
         $serie = $this->repository->add($request);
 
         SeriesCreatedEvents::dispatch(
@@ -59,6 +64,7 @@ class SeriesController extends Controller
           $request->seasonsQty,
           $request->episodesPerSeason,
           $request->coverPath,
+          $serie->descricao
         );
 
         //dd(request()->all());

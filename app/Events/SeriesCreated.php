@@ -24,6 +24,7 @@ class SeriesCreated
         public readonly int $seriesId,
         public readonly int $seriesSeasonsQty,
         public readonly int $seriesEpisodesPerSeason,
+        public readonly string $descricao
     ) {}
 
     /**
