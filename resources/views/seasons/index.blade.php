@@ -1,5 +1,5 @@
 <x-layout title="Séries">
-        <div class="text-center mb-sm-5">
+        <div class="text-center mb-sm-4">
             <h1>{!! $series->nome !!}</h1>
         </div>
     <div class="d-flex justify-center">
@@ -7,6 +7,10 @@
              style="height: 250px"
              alt="Capa da série"
              class="img-fluid">
+    </div>
+
+    <div class="description-box">
+        <p>{{ $series->descricao }}</p>
     </div>
 
     <ul class="list-group my-sm-3">

@@ -9,6 +9,7 @@ use App\Http\Controllers\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Auth\VerifyEmailController;
 use App\Http\Controllers\EpisodesController;
+use App\Http\Controllers\SearchController;
 use App\Http\Controllers\SeasonsController;
 use App\Http\Controllers\SeriesController;
 use Illuminate\Support\Facades\Route;
@@ -62,6 +63,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/', function () {
         return redirect('/series');
     });
+
     Route::get('/series/{series}/seasons', [SeasonsController::class, 'index'])
         ->name('seasons.index');
 

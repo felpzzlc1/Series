@@ -39,8 +39,20 @@
                        id="cover"
                        name="cover"
                        class="form-control"
-                       accept="image/gif, image/jpeg, image/png">
+                       accept="image/gif, image/jpeg, image/png, image/jpg">
             </div>
+            
+            <div class="col-12">
+                <label for="descricao" class="form-label">Descrição:</label>
+                <input type="text"
+                       autofocus
+                       id="descricao"
+                       name="descricao"
+                       class="form-control"
+                       value="{{ old('descricao') }}">
+            </div>
+
+
         </div>
 
         <button type="submit" class="btn btn-primary">Adicionar</button>

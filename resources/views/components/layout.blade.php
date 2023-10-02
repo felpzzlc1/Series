@@ -14,11 +14,13 @@
     <div class="container-fluid">
         <a class="navbar-brand" href="{{ route('series.index') }}">Home</a>
 
-        <form action="/" method="GET">
+    <div class="search-form-container d-flex justify-content-center mt-3">
+        <form method="GET" action="/series">
+            @csrf
             <input type="text" id="search" name="search" class="form-control" placeholder="Buscar série">
+            <button type="submit">Buscar</button>
         </form>
-
-
+    </div>
 
         @auth
         <form action="{{ route('logout') }}" method="post">
